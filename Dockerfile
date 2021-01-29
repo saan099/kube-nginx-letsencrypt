@@ -5,8 +5,9 @@ RUN apt-get update && apt-get install -yq --allow-unauthenticated\
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common && add-apt-repository ppa:certbot/certbot -y && apt-get update && apt-get install certbot -yq --allow-unauthenticated
+    software-properties-common && python && add-apt-repository ppa:certbot/certbot -y && apt-get update && apt-get install certbot -yq --allow-unauthenticated
 #RUN mkdir /etc/letsencrypt
+RUN add-apt-repository ppa:jonathonf/python-3.6 && apt-get update && apt-get install python3.6
 
 CMD ["/entrypoint.sh"]
 
